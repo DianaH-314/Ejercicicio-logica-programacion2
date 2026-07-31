@@ -23,15 +23,16 @@ const prompt = require('prompt-sync')();
 // };
 
 console.log("Convertir temperaturas Celcius a Kelvin y Fahrenheit.\n");
-
+let temperatura;
 
 do {
-    let temperatura = parseInt(prompt(console.log("Ingresa un número: ")));
-    console.log("La temperatura que ingresaste es de " + temperatura + "° Celcius.");
-} while (!Number.isFinite(temperatura)){
+    temperatura = parseInt(prompt(console.log("Ingresa un número: ")));
+
     if (!(Number.isFinite(temperatura))){
     console.log("Ese no es un número. Ingresa un número: ");
-    } else {
+    }
+} while (!Number.isFinite(temperatura)){
+    
     //Hacemos las conversiones
     let tempFahrenheit = (temperatura * 1.8) + 32;
     let tempKelvin = temperatura + 273.15
@@ -40,5 +41,5 @@ do {
     console.log("La temperatura que ingresaste es de " + temperatura + "° Celcius");
     console.log("Grados Kelvin: " + tempKelvin);
     console.log("Grados Fahrenheit: " + tempFahrenheit);
-    }
-};
+    
+}
